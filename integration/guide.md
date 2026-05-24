@@ -10,12 +10,21 @@
 
 ## 2. Frontend Integration (JBoss/JSP)
 
-Add this snippet to your HTML/JSP file (usually in `footer.jsp` or before `</body>`):
+Add this snippet to your `index.jsp` file (using the local paths within your WAR):
 
 ```html
-<!-- Chatbot Styles and Script -->
-<link rel="stylesheet" href="path/to/chatbot-widget.css">
-<script src="path/to/chatbot-widget.js"></script>
+<html>
+<head>
+    <!-- Add CSS in the <head> section -->
+    <link rel="stylesheet" href="css/chatbot-widget.css">
+</head>
+<body>
+    ... your application content ...
+
+    <!-- Add Javascript just before the closing </body> tag -->
+    <script src="js/chatbot-widget.js"></script>
+</body>
+</html>
 ```
 
 > [!IMPORTANT]

@@ -48,10 +48,29 @@ Open your JBoss `standalone.xml` (usually in `bin/standalone/configuration/`).
     </outbound-socket-binding>
     ```
 
-### Step 2: Global Script Injection
-If you want the chatbot on **every page** without editing `.jsp` files:
-1.  Place `chatbot-widget.js` and `chatbot-widget.css` in a public folder in your JBoss global static directory (e.g., `welcome-content`).
-2.  In `standalone.xml`, add an Undertow filter to inject the script into the header/footer of every response (Requires custom module) **OR** simply add the script tag to your application's common `footer.jsp`.
+### Step 2: Global Script Injection (index.jsp)
+Since your `index.jsp` is inside a `.war` file, follow these steps:
+
+1.  **Place the files**: Copy `chatbot-widget.js` and `chatbot-widget.css` into a directory that your web app can see (e.g., your app's `js` and `css` folders, or a global folder).
+2.  **Edit index.jsp**: Use this exact placement:
+
+```jsp
+<html>
+<head>
+    <link rel="stylesheet" href="css/chatbot-widget.css"> <!-- 1. ADD CSS HERE -->
+    <meta ...>
+</head>
+<body>
+    <!-- Your existing content -->
+
+    <script src="js/chatbot-widget.js"></script> <!-- 2. ADD JS HERE (Just before </body>) -->
+</body>
+</html>
+```
+
+3.  **Deployment**: 
+    - If your JBoss is using "exploded" deployments, you can edit the file directly in `standalone/deployments/yourapp.war/index.jsp`.
+    - If it's a zipped `.war`, you will need to update the file and re-deploy.
 
 ## Phase 5: Final Validation
 1.  Restart JBoss.
