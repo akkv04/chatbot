@@ -7,14 +7,17 @@ This guide provides every single step needed to move from zero to production.
 2.  **Create Folder**: Create a directory `C:\Services\Chatbot` and copy all project files there.
 3.  **PDFs**: Copy your 5 PDFs into `C:\Services\Chatbot\backend\data\`.
 
-## Phase 2: Backend Configuration
-1.  **API Key**:
-    - Rename `backend/.env.example` to `backend/.env`.
-    - Open it with Notepad and paste your key: `GOOGLE_API_KEY=AIza...`
+## Phase 2: Backend & FAQ Configuration
+1.  **Manage Your FAQ**: 
+    - Open `backend/faq.json`. 
+    - Add or edit your questions and answers. The bot will search this file for its responses.
 2.  **First Run (Build)**:
     - Double-click `run_windows.bat`. 
     - Wait for it to say `Application startup complete`.
-    - Close the window. This step ensures the Virtual Environment and local DB are built correctly.
+    - This will set up the Python environment locally on your server.
+3.  **AI Readiness**:
+    - All AI code (Gemini/OpenAI) is pre-written but **commented out** in `backend/brain.py`.
+    - Follow the descriptions in the source code comments when you are ready to enable AI.
 
 ## Phase 3: Making it a Windows Service (Always Running)
 1.  Download **NSSM** (nssm.cc) and extract `nssm.exe` to `C:\Services\Chatbot`.

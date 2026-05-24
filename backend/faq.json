@@ -1,20 +1,60 @@
 {
     "predefined_questions": [
         {
-            "question": "What is JBoss?",
-            "answer": "JBoss (now part of Red Hat) is an open-source application server used for building, deploying, and hosting Java applications."
-        },
-        {
-            "question": "How do I integrate the chatbot?",
-            "answer": "You can integrate the chatbot by adding the script tag provided in the integration guide to your application's footer or main layout file."
-        },
-        {
-            "question": "Does this require an internet connection?",
-            "answer": "The current version works with predefined local answers and does not require an external AI API connection."
-        },
-        {
             "question": "Hello",
-            "answer": "Hi there! I am your assistant. How can I help you today?"
+            "answer": "Hello! Welcome to our assistant. How can I help you today?"
+        },
+        {
+            "question": "Who are you?",
+            "answer": "I am a smart chatbot designed to help you navigate this website and answer your questions quickly."
+        },
+        {
+            "question": "What is JBoss?",
+            "answer": "JBoss (now Red Hat JBoss Enterprise Application Platform) is an open-source application server used for building, deploying, and hosting Java applications."
+        },
+        {
+            "question": "How do I integrate this chatbot?",
+            "answer": "You can integrate it by copying the script and CSS tags into your application's footer or master template, as detailed in our Integration Guide."
+        },
+        {
+            "question": "What are your business hours?",
+            "answer": "Our standard business hours are 9:00 AM to 6:00 PM, Monday through Friday."
+        },
+        {
+            "question": "How can I contact support?",
+            "answer": "You can reach our support team via email at support@example.com or by calling our hotline at +1-800-555-0199."
+        },
+        {
+            "question": "Is this chatbot powered by AI?",
+            "answer": "Currently, I am operating on a predefined set of questions and answers to provide fast and reliable support. AI capabilities can be enabled in the future."
+        },
+        {
+            "question": "Does it work on mobile?",
+            "answer": "Yes! The chatbot widget is fully responsive and designed to work seamlessly on all mobile devices and tablets."
+        },
+        {
+            "question": "What browsers are supported?",
+            "answer": "The chatbot supports all modern browsers including Chrome, Firefox, Safari, and Edge."
+        },
+        {
+            "question": "What if you don't know the answer?",
+            "answer": "If I can't find an answer to your question, please contact our human support team for further assistance."
+        },
+        {
+            "question": "Where is my data stored?",
+            "answer": "Your interactions are handled locally on our secure JBoss server environment to ensure maximum privacy and security."
+        },
+        {
+            "question": "Can I use it on multiple pages?",
+            "answer": "Yes, once integrated via the JBoss global filter or master template, I will be available on every page of your application."
+        },
+        {
+            "question": "Thank you",
+            "answer": "You're very welcome! If you have any more questions, feel free to ask."
+        },
+        {
+            "question": "Goodbye",
+            "answer": "Goodbye! Have a wonderful day."
         }
     ]
 }
