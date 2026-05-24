@@ -2,3 +2,8 @@
 ←[32mINFO←[0m:     Uvicorn running on ←[1mhttp://127.0.0.1:8000←[0m (Press CTRL+C to quit)
 ←[32mINFO←[0m:     127.0.0.1:52400 - "←[1mGET / HTTP/1.1←[0m" ←[31m404 Not Found←[0m
 ←[32mINFO←[0m:     127.0.0.1:52400 - "←[1mGET /favicon.ico HTTP/1.1←[0m" ←[31m404 Not Found←[0m 
+3.
+   <!-- Chatbot JS -->
+        <script src="<%= request.getContextPath() %>/js/chatbot-widget.js"></script>
+    </body>
+</html>
