@@ -56,3 +56,22 @@ If you want the chatbot on **every page** without editing `.jsp` files:
 1.  Restart JBoss.
 2.  Visit `http://yourserver/chatbot-api/health`. It should return `{"status":"ok"}`.
 3.  Visit your app; the blue bubble should appear!
+
+---
+
+## 🛠️ Troubleshooting & Common Issues
+
+### 1. "Mixed Content" Error (HTTPS)
+- **Problem**: Your JBoss site is on `https://` but the chatbot is on `http://`.
+- **Solution**: Use the **JBoss Reverse Proxy** (Section 4B). This makes the chatbot share the same HTTPS certificate as your main site.
+
+### 2. "Connection Refused"
+- **Check 1**: Is `run_windows.bat` open or is the Windows Service started?
+- **Check 2**: Is Port 8000 open in the Windows Firewall? 
+- **Check 3**: If JBoss and the Chatbot are on different servers, update `API_URL` to the correct IP in `chatbot-widget.js`.
+
+### 3. "No Documents Found"
+- **Solution**: Ensure your PDFs are inside `backend/data/`. Note: Desktop hidden files (starting with `.~`) are ignored.
+
+### 4. Port 8000 is occupied
+- **Solution**: Change `8000` to `8001` in both `run_windows.bat` and `standalone.xml`.
