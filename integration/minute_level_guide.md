@@ -10,14 +10,12 @@ This guide provides every single step needed to move from zero to production.
 ## Phase 2: Backend & FAQ Configuration
 1.  **Manage Your FAQ**: 
     - Open `backend/faq.json`. 
-    - Add or edit your questions and answers. The bot will search this file for its responses.
-2.  **First Run (Build)**:
-    - Double-click `run_windows.bat`. 
-    - Wait for it to say `Application startup complete`.
-    - This will set up the Python environment locally on your server.
-3.  **AI Readiness**:
-    - All AI code (Gemini/OpenAI) is pre-written but **commented out** in `backend/brain.py`.
-    - Follow the descriptions in the source code comments when you are ready to enable AI.
+    - Add or edit your questions/answers.
+2.  **First Run (Build) / Daily Start**:
+    - Double-click **`run_windows.bat`**. 
+    - **Note**: The first run will install dependencies (slow). Subsequent runs will skip this and start the server instantly (fast).
+3.  **Updating Dependencies**:
+    - If you ever change `requirements.txt`, run **`update_windows.bat`** to refresh your environment.
 
 ## Phase 3: Making it a Windows Service (Always Running)
 1.  Download **NSSM** (nssm.cc) and extract `nssm.exe` to `C:\Services\Chatbot`.

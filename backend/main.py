@@ -1,11 +1,15 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from .brain import brain
+from brain import brain
 import os
 import json
 
 app = FastAPI(title="Chatbot API")
+
+@app.get("/")
+async def root():
+    return {"message": "Chatbot API is running! Use /health to check status."}
 
 # Configure CORS
 origins_str = os.getenv("CORS_ORIGINS", '["*"]')
