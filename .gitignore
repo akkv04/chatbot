@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Vector Database
+backend/data/chroma_db/
+backend/data/*.pdf
+
+# Local IDE
+.idea/
+.vscode/
+
+# Project Specific
+test_demo.html
+run_windows.bat
+run_hidden.vbs
