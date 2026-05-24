@@ -4,12 +4,20 @@ from pydantic import BaseModel
 from .brain import brain
 import os
 
+import json
+
 app = FastAPI(title="Chatbot API")
 
 # Configure CORS
+origins_str = os.getenv("CORS_ORIGINS", '["*"]')
+try:
+    origins = json.loads(origins_str)
+except Exception:
+    origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify the JBoss domain
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

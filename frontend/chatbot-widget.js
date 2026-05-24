@@ -70,6 +70,10 @@
 
     // Send logic
     async function sendMessage() {
+        if (API_URL.includes("localhost") && window.location.hostname !== "localhost") {
+            console.warn("Chatbot Warning: API_URL is set to localhost but you are accessing from a remote IP. Chatbot might not connect.");
+        }
+
         const text = input.value.trim();
         if (!text) return;
 
@@ -79,18 +83,29 @@
         const typing = showTyping();
 
         try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
+
             const response = await fetch(`${API_URL}/chat`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: text })
+                body: JSON.stringify({ message: text }),
+                signal: controller.signal
             });
+
+            clearTimeout(timeoutId);
+
+            if (!response.ok) throw new Error("Server error");
 
             const data = await response.json();
             typing.remove();
             addMessage(data.answer, "bot");
         } catch (error) {
             typing.remove();
-            addMessage("Sorry, I'm having trouble connecting to the brain.", "bot");
+            let errorMessage = "Sorry, I'm having trouble connecting to the brain.";
+            if (error.name === 'AbortError') errorMessage = "Response timed out. The brain is taking too long.";
+
+            addMessage(errorMessage, "bot");
             console.error("Chat error:", error);
         }
     }
