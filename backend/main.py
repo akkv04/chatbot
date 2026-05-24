@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from .brain import brain
 import os
-
 import json
 
 app = FastAPI(title="Chatbot API")
@@ -35,7 +34,11 @@ async def startup_event():
     data_dir = os.path.join(os.path.dirname(__file__), "data")
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
-    brain.index_documents(data_dir)
+    
+    # --- AI STARTUP LOGIC (COMMENTED OUT) ---
+    # Description: Triggers the document indexing for RAG on application start.
+    # brain.index_documents(data_dir)
+    # ------------------------------------------
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):

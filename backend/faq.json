@@ -1,0 +1,20 @@
+{
+    "predefined_questions": [
+        {
+            "question": "What is JBoss?",
+            "answer": "JBoss (now part of Red Hat) is an open-source application server used for building, deploying, and hosting Java applications."
+        },
+        {
+            "question": "How do I integrate the chatbot?",
+            "answer": "You can integrate the chatbot by adding the script tag provided in the integration guide to your application's footer or main layout file."
+        },
+        {
+            "question": "Does this require an internet connection?",
+            "answer": "The current version works with predefined local answers and does not require an external AI API connection."
+        },
+        {
+            "question": "Hello",
+            "answer": "Hi there! I am your assistant. How can I help you today?"
+        }
+    ]
+}
