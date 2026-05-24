@@ -1,14 +1,9 @@
 (function () {
-    const API_URL = "http://localhost:8000"; // Update this to your production backend URL
+    // SMART URL: This automatically detects your server (e.g., https://yourserver:10443)
+    // It assumes you have configured the JBoss Reverse Proxy to /chatbot-api
+    const API_URL = window.location.origin + "/chatbot-api";
 
-    // Inject CSS - Make sure this points to the correct location on your JBoss server
-    // If you host the CSS in the same folder as the JS, you can use:
-    // const scriptPath = document.currentScript.src;
-    // const cssPath = scriptPath.substring(0, scriptPath.lastIndexOf("/")) + "/chatbot-widget.css";
-    const styleLink = document.createElement("link");
-    styleLink.rel = "stylesheet";
-    styleLink.href = "chatbot-widget.css";
-    document.head.appendChild(styleLink);
+    // Note: The CSS is now loaded manually in the JSP/XHTML file to allow for custom folder structures.
 
     // Create Container
     const container = document.createElement("div");
