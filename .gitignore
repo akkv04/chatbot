@@ -13,7 +13,5 @@ backend/data/*.pdf
 .idea/
 .vscode/
 
-# Project Specific
+# Project Specific (Keep scripts for server setup)
 test_demo.html
-run_windows.bat
-run_hidden.vbs
